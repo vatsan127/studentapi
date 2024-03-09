@@ -20,14 +20,18 @@ public class StudentRowMapper implements RowMapper<Student> {
         student.setAge(rs.getLong("age"));
         student.setBranch(rs.getString("branch"));
         student.setDegree(rs.getString("degree"));
-        ObjectMapper mapper = new ObjectMapper();
-        PGobject pGobject = (PGobject) rs.getObject("address");
+
+        String addressJson = rs.getString("address");
+
         try {
-            Address studentAddress = mapper.readValue(pGobject.getValue(), Address.class);
+            ObjectMapper mapper = new ObjectMapper();
+            Address studentAddress = mapper.readValue(addressJson, Address.class);
             student.setAddress(studentAddress);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
+
         return student;
     }
+
 }

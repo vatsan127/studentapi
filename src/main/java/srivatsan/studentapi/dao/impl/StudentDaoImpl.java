@@ -1,6 +1,7 @@
 package srivatsan.studentapi.dao.impl;
 
 import jakarta.transaction.Transactional;
+import org.json.JSONObject;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import srivatsan.studentapi.dao.StudentDao;

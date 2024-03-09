@@ -1,0 +1,37 @@
+owner-name: srivatsan
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  application:
+    name: studentapi
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/student
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    show-sql: true
+
+school:
+  school-id: 1787
+  school-name: SRMJV
+  school-region: India
+
+admin:
+  username: srivatsan
+  password: password
+
+logging:
+  file:
+    name: school api
+    path: ./
+  include-application-name: true
