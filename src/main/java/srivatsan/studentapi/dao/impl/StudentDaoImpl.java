@@ -24,9 +24,8 @@ public class StudentDaoImpl implements StudentDao {
     @Transactional
     @Override
     public Student save(Student student) {
-        jdbcTemplate.update(INSERT_STUDENT,
-                student.getName(), student.getAge(), student.getDegree(),
-                student.getBranch(), convertAddressToJson(student.getAddress()));
+        jdbcTemplate.update(INSERT_STUDENT, student.getName(), student.getAge(),
+                student.getDegree(), student.getBranch(), convertAddressToJson(student.getAddress()));
         return student;
     }
 
@@ -51,8 +50,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> findAll() {
-        List<Student> studentList = jdbcTemplate.query(SELECT_STUDENT,
-                new StudentRowMapper());
+        List<Student> studentList = jdbcTemplate.query(SELECT_STUDENT, new StudentRowMapper());
         return studentList;
     }
 
