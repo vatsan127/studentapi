@@ -1,6 +1,5 @@
 package srivatsan.studentapi.dao;
 
-import srivatsan.studentapi.model.Address;
 import srivatsan.studentapi.model.Student;
 
 import java.util.List;
@@ -11,7 +10,7 @@ public interface StudentDao {
 
     Optional<Student> findById(Long id);
 
-    String convertAddressToJson(Address address);
+    /*String convertAddressToJsonStr(Address address);*/
 
     List<Student> findAll();
 

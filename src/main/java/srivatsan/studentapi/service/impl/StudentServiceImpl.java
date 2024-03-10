@@ -1,7 +1,5 @@
 package srivatsan.studentapi.service.impl;
 
-
-
 import srivatsan.studentapi.dao.StudentDao;
 import srivatsan.studentapi.exception.StudentNotFoundException;
 import srivatsan.studentapi.model.Student;
@@ -23,6 +21,11 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.save(student);
     }
 
+    public List<Student> getStudents() {
+        List<Student> studentList = studentDao.findAll();
+        return studentList;
+    }
+
     public Student getStudentsById(Long id) {
         Optional<Student> optionalStudent = studentDao.findById(id);
         if (optionalStudent.isPresent()) {
@@ -31,13 +34,6 @@ public class StudentServiceImpl implements StudentService {
             throw new StudentNotFoundException();
         }
     }
-
-
-    public List<Student> getStudents() {
-        List<Student> studentList = studentDao.findAll();
-        return studentList;
-    }
-
 
     public Student removeStudent(Long id) {
         Optional<Student> optionalStudent = studentDao.findById(id);

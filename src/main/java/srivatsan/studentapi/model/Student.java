@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Valid
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,12 +28,10 @@ public class Student {
     private String degree;
 
     private String branch;
-
+/*
     @Valid
     @NotNull(message = "Address is required")
-    private Address address;
+    private Address address;*/
 
-    @Min(value = 0, message = "Class in charge should be a positive number")
-    private int classInCharge;
 
 }
