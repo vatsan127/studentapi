@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class StudentRowMapper implements RowMapper<Student> {
 
+    /* Map Entity to Student object*/
     @Override
     public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
         Student student = new Student();

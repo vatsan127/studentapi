@@ -16,16 +16,19 @@ public class StudentServiceImpl implements StudentService {
         this.studentDao = studentDao;
     }
 
+    /*Create student record*/
     @Override
     public Student addstudent(Student student) {
         return studentDao.save(student);
     }
 
+    /*Fetch all student records*/
     public List<Student> getStudents() {
         List<Student> studentList = studentDao.findAll();
         return studentList;
     }
 
+    /*Fetch student record by ID*/
     public Student getStudentsById(Long id) {
         Optional<Student> optionalStudent = studentDao.findById(id);
         if (optionalStudent.isPresent()) {
@@ -35,12 +38,12 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    /*Delete Student record by ID*/
     public Student removeStudent(Long id) {
         Optional<Student> optionalStudent = studentDao.findById(id);
-        if (optionalStudent.isPresent()){
+        if (optionalStudent.isPresent()) {
             studentDao.deleteById(id);
-        }
-        else {
+        } else {
             throw new StudentNotFoundException();
         }
         return optionalStudent.get();
