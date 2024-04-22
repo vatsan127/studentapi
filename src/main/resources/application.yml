@@ -13,14 +13,6 @@ spring:
     username: root
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
-#  cloud:
-#    consul:
-#      config:
-#        enabled: false
-#      host: ${CONSUL_HOST:localhost}
-#      port: ${CONSUL_PORT:8500}
-#    discovery:
-#      enabled: true
 
 
 school:
